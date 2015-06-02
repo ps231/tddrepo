@@ -56,10 +56,12 @@ public class BirthdayCalculator {
             if (isPriceOfBlackMoreThanPriceOfConversion()) {
                 minAmount += calculateAmount(noOfWhiteGifts, pricePerWhiteGift);
                 minAmount += calculateConvertedPrice(noOfBlackGifts, pricePerWhiteGift, priceOfConversion);
-            }
-            if (isPriceOfWhiteMoreThanPriceOfConversion()) {
+            } else if (isPriceOfWhiteMoreThanPriceOfConversion()) {
                 minAmount += calculateAmount(noOfBlackGifts, pricePerBlackGift);
                 minAmount += calculateConvertedPrice(noOfWhiteGifts, pricePerBlackGift, priceOfConversion);
+            } else {
+                minAmount += calculateAmount(noOfBlackGifts, pricePerBlackGift);
+                minAmount += calculateAmount(noOfWhiteGifts, pricePerWhiteGift);
             }
         } else {
             minAmount += calculateAmount(noOfBlackGifts, pricePerBlackGift);

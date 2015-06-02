@@ -105,4 +105,15 @@ public class TaumDikshaBirthDayCalculatorTest {
         Assert.assertEquals(12, bc.deduceMinAmountToBeSpent());
     }
 
+    @Test
+    public void testCase8() {
+        final BirthdayCalculator bc = new BirthdayCalculator(83666934, 10563001, 961640, 539051, 424245);
+        Assert.assertEquals(86151466663811L, bc.deduceMinAmountToBeSpent());
+    }
+
+    @Test
+    public void testCase9() {
+        final BirthdayCalculator bc = new BirthdayCalculator(58987449, 22313527, 461810, 182410, 378447);
+        Assert.assertEquals(31311204282760L, bc.deduceMinAmountToBeSpent());
+    }
 }

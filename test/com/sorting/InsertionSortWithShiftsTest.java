@@ -25,4 +25,14 @@ public class InsertionSortWithShiftsTest {
         Assert.assertEquals(4, InsertionSortWithShifts.calculateTotalShifts(new int[] { 2, 1, 3, 1, 2 }));
     }
 
+    @Test
+    public void insertionSortShouldReturnTheSortedArray4() {
+        Assert.assertEquals(6, InsertionSortWithShifts.calculateTotalShifts(new int[] { 4, 3, 2, 1 }));
+    }
+
+    @Test
+    public void insertionSortShouldReturnTheSortedArray5() {
+        Assert.assertEquals(0, InsertionSortWithShifts.calculateTotalShifts(new int[] { 4, 5, 6, 7, 10 }));
+    }
+
 }

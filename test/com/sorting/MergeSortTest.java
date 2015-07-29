@@ -30,6 +30,18 @@ public class MergeSortTest {
     }
 
     @Test
+    public void mergeSortShouldReturnTheSortedArray4() {
+        final int[] sortedArray = MergeSort.sort(new int[] { 15, 6, 2, 14, 8, 7, 3, 1, 25, 6, 3 });
+        Assert.assertArrayEquals(new int[] { 1, 2, 3, 3, 6, 6, 7, 8, 14, 15, 25 }, sortedArray);
+    }
+
+    @Test
+    public void mergeSortShouldReturnTheSortedArray5() {
+        final int[] sortedArray = MergeSort.sort(new int[] { 5, 4, 3, 2, 1, -4, -8, -15, 24, 17 });
+        Assert.assertArrayEquals(new int[] { -15, -8, -4, 1, 2, 3, 4, 5, 17, 24 }, sortedArray);
+    }
+
+    @Test
     public void shouldMergeLeftAndRightSortedArrays() {
         final int[] mergedArray = MergeSort.mergeLeftAndRightSortedArrays(new int[] { 2 }, new int[] { 1, 3 });
         Assert.assertArrayEquals(new int[] { 1, 2, 3 }, mergedArray);

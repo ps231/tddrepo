@@ -10,16 +10,16 @@ public class OddEvenLists {
         }
     }
 
-    private ListNode rearrangeOddAndEvenNodes(ListNode odd, ListNode even) {
+    private ListNode rearrangeOddAndEvenNodes(ListNode lastOdd, ListNode even) {
         ListNode firstEven = even;
-        ListNode firstOdd = odd;
+        ListNode firstOdd = lastOdd;
         while(even != null && even.getNext() != null) {
-            odd.setNext(even.getNext());
-            odd = odd.getNext();
-            even.setNext(odd.getNext());
+            lastOdd.setNext(even.getNext());
+            lastOdd = lastOdd.getNext();
+            even.setNext(lastOdd.getNext());
             even = even.getNext();
         }
-        odd.setNext(firstEven);
+        lastOdd.setNext(firstEven);
         return firstOdd;
     }
 }

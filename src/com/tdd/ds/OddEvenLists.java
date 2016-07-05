@@ -6,27 +6,21 @@ public class OddEvenLists {
         if (head == null || head.getNext() == null || head.getNext().getNext() == null) {
             return head;
         } else {
-            ListNode odd = head;
-            ListNode lastNode = head;
-            final ListNode even = head.getNext();
-            int i = 1;
-            while (odd.getNext() != null) {
-                lastNode = odd;
-                odd = reArrangeLinks(odd);
-                i++;
-            }
-
-            if (i % 2 == 0)
-                lastNode.setNext(even);
-            else
-                odd.setNext(even);
-            return head;
+            return rearrangeOddAndEvenNodes(head, head.getNext());
         }
     }
 
-    private ListNode reArrangeLinks(final ListNode current) {
-        final ListNode next = current.getNext();
-            current.setNext(next.getNext());
-            return next;
+    private ListNode rearrangeOddAndEvenNodes(ListNode odd, ListNode even) {
+        ListNode firstEven = even;
+        ListNode firstOdd = odd;
+        while(even != null && even.getNext() != null) {
+            odd.setNext(even.getNext());
+            odd = odd.getNext();
+            even.setNext(odd.getNext());
+            even = even.getNext();
+        }
+        odd.setNext(firstEven);
+        return firstOdd;
     }
 }
+

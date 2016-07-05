@@ -40,7 +40,7 @@ public class OddEvenListsTest {
 
     @Test
     public void shouldArrangeOddEvenCorrectly() {
-        ListNode expected = createSingleLinkedList(4);
+        ListNode expected = createSingleLinkedList(7);
         printList(expected);
         ListNode actual = instance.arrangeOddEven(expected);
         printList(actual);

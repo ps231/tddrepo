@@ -107,4 +107,38 @@ public class BinaryTree {
 
         return root;
     }
+
+    public static BinaryTreeNode createTreeForFlattening() {
+        BinaryTreeNode root = new BinaryTreeNode();
+        root.value = 1;
+
+        BinaryTreeNode left = new BinaryTreeNode();
+        left.value = 2;
+
+        BinaryTreeNode right = new BinaryTreeNode();
+        right.value = 5;
+
+        root.left = left;
+        root.right = right;
+
+//        left = new BinaryTreeNode();
+//        left.value = 3;
+//
+//        right = new BinaryTreeNode();
+//        right.value = 4;
+//
+//        root.left.left = left;
+//        root.left.right = right;
+
+//        left = new BinaryTreeNode();
+//        left.value = 6;
+
+//        right = new BinaryTreeNode();
+//        right.value = 6;
+
+//        root.right.left = left;
+//        root.right.right = right;
+
+        return root;
+    }
 }

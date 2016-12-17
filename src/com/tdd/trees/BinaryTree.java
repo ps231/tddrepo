@@ -1,11 +1,8 @@
 package com.tdd.trees;
 
-/**
- * Created by shindikp on 10/21/16.
- */
 public class BinaryTree {
 
-    public static BinaryTreeNode createBalancedTree() {
+    public static BinaryTreeNode createPerfectBinaryTree() {
         BinaryTreeNode root = new BinaryTreeNode();
         root.value = 1;
 
@@ -39,8 +36,8 @@ public class BinaryTree {
         return root;
     }
 
-    public static BinaryTreeNode createUnbalancedTree() {
-        BinaryTreeNode root = createBalancedTree();
+    public static BinaryTreeNode createBalancedTree() {
+        BinaryTreeNode root = createPerfectBinaryTree();
 
         BinaryTreeNode traverse = root.left.left;
 

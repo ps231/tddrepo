@@ -6,7 +6,7 @@ package com.tdd.trees;
 public class BinaryTreeRecursiveTraversals {
 
     public static void main(String... args) {
-        BinaryTreeNode root = BinaryTree.createBalancedTree();
+        BinaryTreeNode root = BinaryTree.createPerfectBinaryTree();
 
         System.out.println("inorder traversal");
         inorder(root);

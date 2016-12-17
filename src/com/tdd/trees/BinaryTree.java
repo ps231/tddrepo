@@ -105,6 +105,52 @@ public class BinaryTree {
         return root;
     }
 
+    public static BinaryTreeNode createSkewedSymmetricTree() {
+        BinaryTreeNode root = createLeftSkewedTree();
+
+        BinaryTreeNode traverse = root;
+
+        traverse = traverse.right;
+        traverse.value = 2;
+
+
+        BinaryTreeNode right = new BinaryTreeNode();
+        right.value = 4;
+
+        traverse.right = right;
+        traverse = traverse.right;
+
+        right = new BinaryTreeNode();
+        right.value = 6;
+
+        traverse.right = right;
+
+        return root;
+    }
+
+    public static BinaryTreeNode createSkewedAsymmetricTree() {
+        BinaryTreeNode root = createLeftSkewedTree();
+
+        BinaryTreeNode traverse = root;
+
+        traverse = traverse.right;
+        traverse.value = 2;
+
+
+        BinaryTreeNode right = new BinaryTreeNode();
+        right.value = 5;
+
+        traverse.right = right;
+        traverse = traverse.right;
+
+        right = new BinaryTreeNode();
+        right.value = 6;
+
+        traverse.right = right;
+
+        return root;
+    }
+
     public static BinaryTreeNode createTreeForFlattening() {
         BinaryTreeNode root = new BinaryTreeNode();
         root.value = 1;
@@ -135,6 +181,75 @@ public class BinaryTree {
 
 //        root.right.left = left;
 //        root.right.right = right;
+
+        return root;
+    }
+
+    public static BinaryTreeNode createBalancedSymmetricTree() {
+        BinaryTreeNode root = new BinaryTreeNode();
+        root.value = 1;
+
+        BinaryTreeNode left = new BinaryTreeNode();
+        left.value = 2;
+
+        BinaryTreeNode right = new BinaryTreeNode();
+        right.value = 2;
+
+        root.left = left;
+        root.right = right;
+
+        left = new BinaryTreeNode();
+        left.value = 3;
+
+        right = new BinaryTreeNode();
+        right.value = 4;
+
+        root.left.left = left;
+        root.left.right = right;
+
+        left = new BinaryTreeNode();
+        left.value = 4;
+
+        right = new BinaryTreeNode();
+        right.value = 3;
+
+        root.right.left = left;
+        root.right.right = right;
+
+        return root;
+
+    }
+
+    public static BinaryTreeNode createBalancedAsymmetricTree() {
+        BinaryTreeNode root = new BinaryTreeNode();
+        root.value = 1;
+
+        BinaryTreeNode left = new BinaryTreeNode();
+        left.value = 2;
+
+        BinaryTreeNode right = new BinaryTreeNode();
+        right.value = 2;
+
+        root.left = left;
+        root.right = right;
+
+        left = new BinaryTreeNode();
+        left.value = 3;
+
+        right = new BinaryTreeNode();
+        right.value = 4;
+
+        root.left.left = left;
+        root.left.right = right;
+
+        left = new BinaryTreeNode();
+        left.value = 5;
+
+        right = new BinaryTreeNode();
+        right.value = 3;
+
+        root.right.left = left;
+        root.right.right = right;
 
         return root;
     }

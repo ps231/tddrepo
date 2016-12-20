@@ -164,14 +164,14 @@ public class BinaryTree {
         root.left = left;
         root.right = right;
 
-//        left = new BinaryTreeNode();
-//        left.value = 3;
-//
-//        right = new BinaryTreeNode();
-//        right.value = 4;
-//
-//        root.left.left = left;
-//        root.left.right = right;
+        left = new BinaryTreeNode();
+        left.value = 3;
+
+        right = new BinaryTreeNode();
+        right.value = 4;
+
+        root.left.left = left;
+        root.left.right = right;
 
 //        left = new BinaryTreeNode();
 //        left.value = 6;

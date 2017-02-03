@@ -26,8 +26,8 @@ public class MergeKSortedLists {
         printList(mergedHead);
 //        mergedHead = mergeKLists(new ListNode[] {});
 //        printList(mergedHead);
-//        mergedHead = mergeKLists(new ListNode[] {null, null});
-//        printList(mergedHead);
+        mergedHead = mergeKLists(null);
+        printList(mergedHead);
         mergedHead = mergeKLists(new ListNode[] {new ListNode(1), new ListNode(0)});
         printList(mergedHead);
     }
@@ -41,24 +41,16 @@ public class MergeKSortedLists {
 
     public static ListNode mergeKLists(final ListNode[] lists) {
 
-        if (lists.length == 0)
+        if (lists == null || lists.length == 0)
             return null;
 
-        ListNode head = null;
-        ListNode ptr = null;
+        ListNode head = new ListNode(-1);
+        ListNode ptr = head;
         final PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.length, (ListNode n1, ListNode n2) -> { return Integer.compare(n1.val, n2.val); });
 
         for (int i = 0; i < lists.length; i++) {
             if (lists[i] != null)
                 queue.add(lists[i]);
-        }
-
-        if (!queue.isEmpty()) {
-            head = queue.poll();
-            if (head.next != null) {
-                queue.add(head.next);
-            }
-            ptr = head;
         }
 
         while (!queue.isEmpty()) {
@@ -67,6 +59,7 @@ public class MergeKSortedLists {
             if (ptr.next != null)
                 queue.add(ptr.next);
         }
-        return head;
+
+        return head.next;
     }
 }

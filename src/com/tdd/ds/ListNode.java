@@ -1,9 +1,9 @@
 package com.tdd.ds;
 
 public class ListNode {
-         private int val;
-         private ListNode next;
-         public ListNode(int x) { val = x; }
+         int val;
+         ListNode next;
+         public ListNode(final int x) { val = x; }
          public ListNode() {
 
          }
@@ -12,7 +12,7 @@ public class ListNode {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(final int val) {
         this.val = val;
     }
 
@@ -20,7 +20,7 @@ public class ListNode {
         return next;
     }
 
-    public void setNext(ListNode next) {
+    public void setNext(final ListNode next) {
         this.next = next;
     }
 }

@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;

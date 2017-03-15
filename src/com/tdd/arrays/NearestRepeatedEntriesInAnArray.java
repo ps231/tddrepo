@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.arrays;
 
 import java.util.ArrayList;
 import java.util.HashMap;

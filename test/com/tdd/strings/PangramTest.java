@@ -1,5 +1,6 @@
-package com.tdd;
+package com.tdd.strings;
 
+import com.tdd.strings.Pangram;
 import org.junit.Assert;
 import org.junit.Test;
 

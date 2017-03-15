@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.strings;
 
 import java.util.HashMap;
 import java.util.Iterator;

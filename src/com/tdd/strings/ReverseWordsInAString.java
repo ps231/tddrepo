@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.strings;
 
 public class ReverseWordsInAString {
     public static void main(final String... args) {

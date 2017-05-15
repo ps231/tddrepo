@@ -46,7 +46,7 @@ public class CreateAndFindPathInBST {
         return path;
     }
 
-    private int calculatePath(final BinaryTreeNode node, final int n) {
+    private int calculatePath(BinaryTreeNode node, final int n) {
         int path = 0;
 
         while (node != null) {

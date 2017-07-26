@@ -25,7 +25,7 @@ public class ConvertRomanToInteger {
 
     private int convertRomanToInt(final String romanString) {
 
-        final Map<Character, Integer> romanChars = getRomanChars();
+        final Map<Character, Integer> romanToIntegerMap = getRomanChars();
         final String capitalizedRomanStr = romanString.toUpperCase();
         int result = 0;
         int lastRomanVal = 0;
@@ -33,26 +33,32 @@ public class ConvertRomanToInteger {
         for (int i = capitalizedRomanStr.length() - 1; i >= 0; i--) {
             final Character currentRomanChar = capitalizedRomanStr.charAt(i);
 
-            final int currentRomanVal = romanChars.get(currentRomanChar);
+            final int currentRomanVal = romanToIntegerMap.get(currentRomanChar);
             if (lastRomanVal > currentRomanVal) {
 
-                if (lastRomanChar == null || lastRomanChar == currentRomanChar) {
-                    lastRomanChar = currentRomanChar;
-                } else if (isCurrentCharValid(lastRomanChar, currentRomanChar)) {
+                if (isFirstCharacter(lastRomanChar) || isSameCharacterAsPrevious(lastRomanChar, currentRomanChar) || isCurrentCharValid(lastRomanChar, currentRomanChar)) {
                     lastRomanChar = currentRomanChar;
                 } else {
                     throw new IllegalArgumentException("invalid input");
                 }
 
                 lastRomanVal = currentRomanVal;
-                result = result - currentRomanVal;
+                result -= currentRomanVal;
             } else {
                 lastRomanVal = currentRomanVal;
                 lastRomanChar = currentRomanChar;
-                result = result + currentRomanVal;
+                result += currentRomanVal;
             }
         }
         return result;
+    }
+
+    private boolean isSameCharacterAsPrevious(final Character lastRomanChar, final Character currentRomanChar) {
+        return lastRomanChar == currentRomanChar;
+    }
+
+    private boolean isFirstCharacter(final Character lastRomanChar) {
+        return isSameCharacterAsPrevious(lastRomanChar, null);
     }
 
     private boolean isCurrentCharValid(final Character lastRomanChar, final Character currentRomanChar) {

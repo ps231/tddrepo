@@ -63,6 +63,11 @@ public class RomanToIntegerTest {
     }
 
     @Test
+    public void shouldReturnFourteenForCorrectInput() {
+        verify(14, r.convert("XIV"));
+    }
+
+    @Test
     public void shouldReturnNineForCorrectInput() {
         verify(9, r.convert("IX"));
     }

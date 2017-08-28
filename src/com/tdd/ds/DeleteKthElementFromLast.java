@@ -4,9 +4,9 @@ package com.tdd.ds;
 public class DeleteKthElementFromLast {
 
     public static void main(final String[] args) {
-        DeleteKthElementFromLast k = new DeleteKthElementFromLast();
+        final DeleteKthElementFromLast k = new DeleteKthElementFromLast();
         final ListNode root = createLinkedList(6);
-        k.deleteKthNodeFromLast(root, 6);
+        k.deleteKthNodeFromLast(root, 3);
         printList(root);
     }
 

@@ -21,7 +21,7 @@ public class KLargestElementsInBST {
         });
     }
 
-    private static void getLargestNodes(BinaryTreeNode root, Integer noOfNodes, List<Integer> kLargest) {
+    private static void getLargestNodes(BinaryTreeNode root, int noOfNodes, List<Integer> kLargest) {
         if (root == null || kLargest.size() == noOfNodes)
             return;
 
